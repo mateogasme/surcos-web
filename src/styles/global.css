@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #4de4c1;
+  --color-secondary: #ff7979;
+  --color-tertiary: #7b85ed;
+  --color-fourth: #faa74e;
+}
+
+.scrolled {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(27, 27, 27, 0.3);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+}

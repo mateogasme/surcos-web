@@ -1,0 +1,70 @@
+---
+import Background from "@components/Background.astro";
+import Header from "@components/Header.astro";
+import Footer from "@components/Footer.astro";
+import "@fontsource-variable/onest";
+import "../styles/global.css";
+---
+
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Equipo Surcos - Formación y transformación comunitaria</title>
+		<meta
+			name="description"
+			content="Equipo Surcos promueve la solidaridad y el desarrollo comunitario a través de propuestas formativas y acompañamiento a organizaciones sociales, eclesiales y educativas."
+		/>
+		<meta
+			name="keywords"
+			content="equipo surcos, formación, desarrollo comunitario, transformación social, organizaciones sociales, justicia, solidaridad"
+		/>
+		<meta name="author" content="Equipo Surcos" />
+		<meta name="robots" content="index, follow" />
+		<link rel="canonical" href="https://equiposurcos.com.ar" />
+		<link
+			rel="icon"
+			href="https://equiposurcos.com.ar/images/favicon.ico"
+			type="image/x-icon"
+		/>
+	</head>
+	<body>
+		<Background />
+
+		<Header />
+
+		<main>
+			<slot />
+		</main>
+
+		<Footer />
+	</body>
+</html>
+
+<style>
+	* {
+		box-sizing: border-box;
+	}
+
+	html {
+		scroll-behavior: smooth;
+		overflow-x: hidden;
+		overflow-y: auto;
+		scrollbar-gutter: stable;
+	}
+
+	body {
+		margin: 0;
+		padding: 0;
+		background-color: #0a0a0a;
+		color: #e0e0e0;
+		font-family: "Onest Variable", sans-serif;
+	}
+
+	main {
+		max-width: 800px;
+		margin: 0 auto;
+		padding: 32px;
+	}
+</style>

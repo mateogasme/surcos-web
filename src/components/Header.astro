@@ -1,0 +1,60 @@
+---
+import Button from "./design/Button.astro";
+
+const LI_STYLES = "inline-block";
+const A_STYLES =
+  "text-[#bbb] font-normal transition color 200ms hover:text-white";
+---
+
+<header
+  id="header"
+  class="fixed top-0 left-0 w-full flex justify-center items-center z-100 border-b border-[1px] border-transparent py-5"
+>
+  <nav class="w-full max-w-[1200px] flex justify-between items-center">
+    <img
+      src="https://equiposurcos.com.ar/images/equiposurcos.webp"
+      alt="Equipo Surcos"
+      class="max-w-[120px] h-auto block"
+    />
+    <ul
+      class="absolute left-1/2 transform -translate-x-1/2 flex gap-7 list-none"
+    >
+      <li class={LI_STYLES}>
+        <a class={A_STYLES} href="https://equiposurcos.com.ar/#arrow"
+          >Nosotros</a
+        >
+      </li>
+      <li class={LI_STYLES}>
+        <a class={A_STYLES} href="https://equiposurcos.com.ar/consultoria">
+          Consultoría</a
+        >
+      </li>
+      <li class={LI_STYLES}>
+        <a class={A_STYLES} href="https://equiposurcos.com.ar/formacion"
+          >Formación</a
+        >
+      </li>
+      <li class={LI_STYLES}>
+        <a class={A_STYLES} href="https://equiposurcos.com.ar/publicaciones"
+          >Publicaciones</a
+        >
+      </li>
+      <li class={LI_STYLES}>
+        <a class={A_STYLES} href="https://equiposurcos.com.ar/trabajo"
+          >Trabajos</a
+        >
+      </li>
+    </ul>
+    <Button class="py-[8px] px-5 bg-white text-black" href="/#contacto">
+      ¡Contáctame!
+    </Button>
+  </nav>
+</header>
+
+<script>
+  const header = document.getElementById("header");
+
+  window.addEventListener("scroll", function () {
+    header?.classList.toggle("scrolled", window.scrollY > 0);
+  });
+</script>

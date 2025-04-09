@@ -1,0 +1,69 @@
+---
+import Title from "./design/Title.astro";
+
+const LinkFriends = [
+  {
+    name: "Servicios Koinonia",
+    image: "https://movpop.org/wp-content/uploads/2020/10/logo2020.png",
+    href: "https://www.servicioskoinonia.org/",
+  },
+  {
+    name: "Caritas",
+    image:
+      "https://caritaslaplata.org/wp-content/uploads/2022/06/cropped-la_plata_2-con-transpa.png",
+    href: "https://www.caritas.org/",
+  },
+  {
+    name: "Caritas Argentina",
+    image:
+      "https://rendicion2020.caritas.org.ar/wp-content/uploads/2021/04/LogoCaritas.png",
+    href: "https://caritas.org.ar/",
+  },
+  {
+    name: "Scholas",
+    image:
+      "https://globaleducationcoalition.unesco.org/uploads/183_Scholas_Occurrentes_Pontifical_Foundation_color_logo_UIaWzl.png?v=e0BnVBx4IHc0rlhf7S-n__cBtkpBFbuxXr9cTDcCo70",
+    href: "https://scholasoccurrentes.org/",
+  },
+  {
+    name: "Movimientos Populares (Mov Pop)",
+    image: "https://movpop.org/wp-content/uploads/2020/10/logo2020.png",
+    href: "https://movpop.org/",
+  },
+  {
+    name: "Scholas",
+    image:
+      "https://globaleducationcoalition.unesco.org/uploads/183_Scholas_Occurrentes_Pontifical_Foundation_color_logo_UIaWzl.png?v=e0BnVBx4IHc0rlhf7S-n__cBtkpBFbuxXr9cTDcCo70",
+    href: "https://scholasoccurrentes.org/",
+  },
+];
+---
+
+<section class="flex flex-col justify-center items-center mt-40">
+  <Title>Enlaces amigos</Title>
+  <p
+    class="text-[18px] font-normal leading-[1.6] text-[#d0d0d0] text-center my-2 max-w-[600px] text-balance"
+  >
+    Conectamos con colectivos que sueñan con un mundo justo, encontrando a
+    quienes transforman la realidad.
+  </p>
+
+  <ul class="mt-10 grid grid-cols-3 gap-8">
+    {
+      LinkFriends.map((friends) => (
+        <li class="flex items-center justify-center">
+          <a
+            href={friends.href}
+            class="transition-all duration-300 flex items-center justify-center hover:scale-[1.1]"
+          >
+            <img
+              class="h-[100px] w-auto filter brightness-0 invert hover:filter-none transition-all duration-300"
+              src={friends.image}
+              alt={friends.name}
+            />
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</section>

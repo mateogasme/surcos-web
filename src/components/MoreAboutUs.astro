@@ -1,0 +1,54 @@
+---
+import MessageIcon from "@components/icons/Message.astro";
+import SchoolIcon from "@components/icons/SchoolIcon.astro";
+import BriefcaseIcon from "@components/icons/BriefcaseIcon.astro";
+import BookIcon from "@components/icons/BookIcon.astro";
+import Title from "./design/Title.astro";
+
+const BtnInfo = [
+  {
+    title: "Consultoría",
+    icon: MessageIcon,
+    href: "/consultoria",
+  },
+  {
+    title: "Formación",
+    icon: SchoolIcon,
+    href: "/formación",
+  },
+  {
+    title: "Publicaciones",
+    icon: BookIcon,
+    href: "/publicaciones",
+  },
+  {
+    title: "Trabajos",
+    icon: BriefcaseIcon,
+    href: "/trabajos",
+  },
+];
+---
+
+<section class="py-12 px-5 mt-50">
+  <Title class="text-center">
+    Conocé más de <br /> nuestros servicios
+  </Title>
+
+  <div class="flex justify-center items-center">
+    <ul class="flex justify-center items-center gap-5 mt-10">
+      {
+        BtnInfo.map((btn) => (
+          <li class="flex items-center justify-center">
+            <a
+              class="flex flex-col items-center justify-center bg-[#22202c19] p-9 rounded-2xl border border-white/10 w-[170px] h-[160px] hover:-translate-y-1 transition-transform duration-200 hover:shadow-sm"
+              href={btn.href}
+            >
+              <btn.icon class="w-[60px] h-[60px] mb-5 text-primary-500" />
+              <span class="text-lg font-medium">{btn.title}</span>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>

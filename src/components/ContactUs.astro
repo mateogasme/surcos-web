@@ -1,0 +1,105 @@
+---
+import Title from "./design/Title.astro";
+import PhoneIcon from "./icons/Phone.astro";
+import MailIcon from "./icons/Mail.astro";
+---
+
+<section class="my-40 px-6 rounded-2xl shadow-lg max-w-4xl mx-auto relative">
+  <Title class="text-center">
+    Contáctate <br /> con nosotros
+  </Title>
+
+  <div
+    class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10 max-w-[650px] w-full mx-auto"
+  >
+    <div
+      class="relative group p-6 bg-[#22202c19] border border-white/10 rounded-xl shadow-md hover:shadow-xl transition transform hover:-translate-y-1 cursor-pointer"
+      data-copy="info@equiposurcos.com.ar"
+    >
+      <div class="flex items-center space-x-4">
+        <div class="bg-blue-500 text-white p-3 rounded-full">
+          <MailIcon class="text-[#111]" />
+        </div>
+        <div>
+          <p class="text-gray-500">Correo Electrónico</p>
+          <p class="text-[15px] font-medium text-blue-500">
+            info@equiposurcos.com.ar
+          </p>
+        </div>
+      </div>
+      <p
+        class="absolute -bottom-6 left-6 text-sm text-gray-500 opacity-0 group-hover:opacity-100 transition"
+      >
+        Haz clic para copiar
+      </p>
+    </div>
+
+    <div
+      class="relative group p-6 bg-[#22202c19] border border-white/10 rounded-xl shadow-md hover:shadow-xl transition transform hover:-translate-y-1 cursor-pointer"
+      data-copy="+5491162596258"
+    >
+      <div class="flex items-center space-x-4">
+        <div class="bg-green-500 text-white p-3 rounded-full">
+          <PhoneIcon class="text-[#111]" />
+        </div>
+        <div>
+          <p class="text-gray-500">Teléfono</p>
+          <p class="text-[15px] font-medium text-green-600">
+            +54 9 11 6259-6258
+          </p>
+        </div>
+      </div>
+      <p
+        class="absolute -bottom-6 left-6 text-sm text-gray-500 opacity-0 group-hover:opacity-100 transition"
+      >
+        Haz clic para copiar
+      </p>
+    </div>
+  </div>
+
+  <!-- Notificación de copiado -->
+  <div
+    id="copy-notification"
+    class="hidden fixed bottom-6 left-1/2 transform -translate-x-1/2 bg-white text-gray-800 shadow-lg px-4 py-3 rounded-lg flex items-center space-x-3 transition-all duration-300 opacity-0 scale-95"
+  >
+    <span class="text-green-500">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="icon icon-tabler icons-tabler-outline icon-tabler-check"
+        ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
+          d="M5 12l5 5l10 -10"></path></svg
+      >
+    </span>
+    <p id="copy-text" class="text-sm">Texto copiado</p>
+  </div>
+</section>
+
+<script is:inline>
+  document.addEventListener("DOMContentLoaded", () => {
+    const cards = document.querySelectorAll("[data-copy]");
+    const notification = document.getElementById("copy-notification");
+    const copyText = document.getElementById("copy-text");
+
+    cards.forEach((card) => {
+      card.addEventListener("click", () => {
+        const text = card.getAttribute("data-copy");
+        navigator.clipboard.writeText(text).then(() => {
+          copyText.innerText = `¡${text} copiado!`;
+          notification.classList.remove("hidden", "opacity-0", "scale-95");
+          setTimeout(() => {
+            notification.classList.add("opacity-0", "scale-95");
+            setTimeout(() => notification.classList.add("hidden"), 300);
+          }, 2000);
+        });
+      });
+    });
+  });
+</script>

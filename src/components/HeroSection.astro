@@ -1,0 +1,43 @@
+---
+import Button from "./design/Button.astro";
+import UsersIcon from "./icons/Users.astro";
+import BulbIcon from "./icons/Bulb.astro";
+import GlassIcon from "./icons/Glass.astro";
+import Arrow from "./icons/Arrow.astro";
+---
+
+<section class="flex flex-col justify-center items-center pt-40 h-full m-auto">
+  <h1
+    class="text-6xl font-bold text-white mb-10 leading-[.9] text-center tracking-[-.8px]"
+  >
+    Equipo Surcos
+  </h1>
+
+  <p
+    class="text-[18px] font-normal leading-[1.6] text-[#d0d0d0] text-center max-w-[600px] text-balance"
+  >
+    Trabajamos, desde 2005, acompañando equipos, iniciativas y procesos en
+    ámbitos educativos, sociales y pastorales. Asesoramos proyectos y procesos
+    de trabajo, desarrollamos propuestas formativas y generamos contenidos
+    impresos o digitales.
+  </p>
+
+  <div class="flex justify-center items-center gap-4 mt-12">
+    <Button href="/#nosotros" class="bg-tertiary text-black w-[160px]">
+      <UsersIcon class="w-[20px] h-[20px] mr-2" />
+      Nosotros
+    </Button>
+    <Button href="/#servicios" class="bg-secondary text-black w-[160px]">
+      <BulbIcon
+        class="w-[22px] h-[22px] mr-2 flex items-center justify-center"
+      />
+      Servicios
+    </Button>
+    <Button href="/#vision" class="bg-fourth text-black w-[160px]">
+      <GlassIcon class="w-[20px] h-[20px] mr-2" />
+      Visión
+    </Button>
+  </div>
+
+  <Arrow class="absolute left-[50%] bottom-[70px] transform translate-x-[-50%] w-[32px] h-[32px] animate-bounce" />
+</section>

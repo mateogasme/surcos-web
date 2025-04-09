@@ -1,0 +1,17 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { pages } from '../pages.js';
+
+export async function getStaticPaths() {
+  return pages.map(page => ({
+    params: { slug: page.slug },
+    props: { page }
+  }));
+}
+
+const { page } = Astro.props;
+---
+
+<Layout title={`${page.title} - Equipo Surcos`}></Layout>
+  <Fragment set:html={page.content} />
+</Layout>
